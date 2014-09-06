@@ -19,12 +19,15 @@ public:
 private:
     Ui::Dialog *ui;
     QProcess *proc;
+    void prepareDlButton();
 
 private slots:
     void selectOutputDirectory();
     void download();
     void handleEnd(int status);
+    void handleError(QProcess::ProcessError err);
     void updateLog();
+    void stopDownloading();
 };
 
 #endif // DIALOG_H
